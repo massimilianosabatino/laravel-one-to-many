@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
 use App\Models\Type;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
 class TypeController extends Controller
@@ -91,8 +92,9 @@ class TypeController extends Controller
      */
     public function destroy(Type $type)
     {
+        Schema::disableForeignKeyConstraints();
         $type->delete();
-
+        Schema::enableForeignKeyConstraints();
         return to_route('admin.types.index');
     }
 }
