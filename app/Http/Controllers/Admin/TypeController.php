@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
 use App\Models\Type;
+use Illuminate\Support\Str;
 
 class TypeController extends Controller
 {
@@ -27,7 +28,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.type.create');
     }
 
     /**
@@ -38,7 +39,11 @@ class TypeController extends Controller
      */
     public function store(StoreTypeRequest $request)
     {
-        //
+        $newType = new Type();
+        $newType->fill($request->validated());
+        $newType->slug = Str::slug($newType->category);
+        $newType->save();
+        return to_route('admin.types.index');
     }
 
     /**
