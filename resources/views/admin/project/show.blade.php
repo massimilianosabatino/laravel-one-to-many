@@ -9,7 +9,7 @@
             <h1>{{ $project->title }}</h1>
             <p>{{ $project->description }}</p>
             <div>
-                Category: {{ $project->type->category }}
+                Category: {{ Str::ucfirst($project->type?->category) ?: 'Nessuna categoria' }}
             </div>
                 <a href="{{ route('admin.projects.index') }}" class="btn btn-secondary">Back</a>
         </div>
