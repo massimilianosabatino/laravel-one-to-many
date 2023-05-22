@@ -92,8 +92,10 @@ class TypeController extends Controller
      */
     public function destroy(Type $type)
     {
+        // dd($type->projects);
         Schema::disableForeignKeyConstraints();
         $type->delete();
+        $type->projects->type_id = null;
         Schema::enableForeignKeyConstraints();
         return to_route('admin.types.index');
     }
