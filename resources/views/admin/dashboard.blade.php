@@ -42,11 +42,21 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body d-flex">
-                    <div class="col-6 text-center">
-                        <a href="{{ route('admin.projects.index') }}" class="btn btn-light">Gestione progetti</a>
+                    <div class="col-6 text-center d-flex">
+                        <div class="col-6">
+                            <a href="{{ route('admin.projects.index') }}" class="btn btn-light">Gestione progetti</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="{{ route('admin.projects.create') }}" class="btn btn-light">Aggiungi progetto</a>
+                        </div>
                     </div>
-                    <div class="col-6 text-center">
-                        <a href="{{ route('admin.projects.create') }}" class="btn btn-light">Aggiungi progetto</a>
+                    <div class="col-6 text-center d-flex">
+                        <div class="col-6">
+                            <a href="{{ route('admin.types.index') }}" class="btn btn-light">Gestione categorie</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="{{ route('admin.types.create') }}" class="btn btn-light">Aggiungi categoria</a>
+                        </div>
                     </div>
                 </div>
             </div>
