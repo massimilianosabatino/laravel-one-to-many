@@ -27,7 +27,7 @@ class StoreProjectRequest extends FormRequest
             'title' => 'required|unique:projects',
             'cover' => 'nullable',
             'description' => 'required',
-            'category' => 'required',
+            'type_id' => 'exists:types,id|nullable',
             'link' => 'url|nullable',
             'client' => 'string|nullable',
             'private' => 'boolean',

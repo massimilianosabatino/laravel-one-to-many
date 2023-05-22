@@ -36,12 +36,15 @@
                     <label for="description" class="form-label">Description</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <select class="form-select" name="category" id="category">
+                    <select class="form-select" name="type_id" id="category">
                         <option value="">Select category</option>
-                        <option value="web" {{ old('category') === 'web' ? 'selected' : '' }}>Web</option>
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}" {{ old('type_id') == $type->id ? 'selected' : '' }}>{{ $type->category }}</option>
+                        @endforeach
+                        {{-- <option value="web" {{ old('category') === 'web' ? 'selected' : '' }}>Web</option>
                         <option value="graphic" {{ old('category') === 'graphic' ? 'selected' : '' }}>Graphic</option>
                         <option value="video" {{ old('category') === 'video' ? 'selected' : '' }}>Video</option>
-                        <option value="software" {{ old('category') === 'software' ? 'selected' : '' }}>Software</option>
+                        <option value="software" {{ old('category') === 'software' ? 'selected' : '' }}>Software</option> --}}
                       </select>
                       <label for="category">Select category</label>
                 </div>
