@@ -31,7 +31,7 @@ class UpdateProjectRequest extends FormRequest
             ],
             'cover' => 'nullable',
             'description' => 'required',
-            'category' => 'required',
+            'type_id' => 'exists:types,id|nullable',
             'link' => 'url|nullable',
             'client' => 'string|nullable',
             'private' => 'boolean',

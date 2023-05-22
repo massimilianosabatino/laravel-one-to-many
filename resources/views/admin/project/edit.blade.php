@@ -38,12 +38,12 @@
                     <label for="description" class="form-label">Description</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <select class="form-select" name="category" id="category">
-                        <option value="" {{ $project->category === '' ? 'selected' : '' }}>Select category</option>
-                        <option value="web" {{ old('category', $project->category) === 'web' ? 'selected' : '' }}>Web</option>
-                        <option value="graphic" {{ old('category', $project->category) === 'graphic' ? 'selected' : '' }}>Graphic</option>
-                        <option value="video" {{ old('category', $project->category) === 'video' ? 'selected' : '' }}>Video</option>
-                        <option value="software" {{ old('category', $project->category) === 'software' ? 'selected' : '' }}>Software</option>
+                    
+                    <select class="form-select" name="type_id" id="category">
+                        <option value="" {{ $project->type_id == '' ? 'selected' : '' }}>Select category</option>
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}" {{ old('type_id', $project->type_id) == $type->id ? 'selected' : '' }}>{{ $type->category }}</option>
+                        @endforeach
                       </select>
                       <label for="category">Select category</label>
                 </div>
