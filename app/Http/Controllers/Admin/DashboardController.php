@@ -13,7 +13,7 @@ class DashboardController extends Controller
     {
         $countProjectTotal = DB::table('projects')->count('id');
 
-        $countMaxOnCategory = DB::table('projects')->select(DB::raw('count(id) as number, category'))->groupBy('category')->get();
+        $countMaxOnCategory = DB::table('projects')->select(DB::raw('count(id) as number, type_id'))->groupBy('type_id')->get();
         $getMaxCategory = max($countMaxOnCategory->all());        
 
 

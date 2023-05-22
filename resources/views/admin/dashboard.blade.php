@@ -28,7 +28,7 @@
                         Totale progetti: {{ $countProjectTotal }}
                     </div>
                     <div class="col-6">
-                        Categoria con più progetti: {{Str::ucfirst($getMaxCategory->category) }} -> {{ $getMaxCategory->number }} progetti
+                        Categoria con più progetti: {{Str::ucfirst($getMaxCategory->type_id) }} -> {{ $getMaxCategory->number }} progetti
                     </div>
                     <div class="mt-2">
                         <a href="{{ route('admin.projects.index') }}" class="btn btn-light">Gestione progetti</a>
