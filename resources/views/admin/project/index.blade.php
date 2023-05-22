@@ -28,7 +28,7 @@
                                 <img class="img-fluid thumb" src="@if (Str::startsWith($project->cover, 'http')) {{ $project->cover }} @else {{ asset('storage/' . $project->cover) }} @endif" alt="{{ $project->title }}">
                             </td>
                             <td>{{ $project->title }}</td>
-                            <td>{{ $project->category }}</td>
+                            <td>{{ $project->type?->category ?: 'Uncategorized' }}</td>
                             <td>
                                 <input class="form-check-input" type="checkbox" value="" {{ $project->private ? 'checked' : '' }} id="flexCheckDefault" aria-label="Private project">
                             </td>
