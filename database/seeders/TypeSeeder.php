@@ -22,7 +22,7 @@ class TypeSeeder extends Seeder
             $newType = new Type();
             $newType->category = $types[$i];
             $newType->slug = Str::slug($newType->category);
-            var_dump($newType);
+            $newType->save();
         }
 
     }

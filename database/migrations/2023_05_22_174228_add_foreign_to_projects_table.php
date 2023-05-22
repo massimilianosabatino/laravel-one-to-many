@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->foreignId('type_id')->constrained()->nullOnDelete();
+            $table->foreignId('type_id')->nullOnDelete()->nullable()->after('id')->constrained();
         });
     }
 
